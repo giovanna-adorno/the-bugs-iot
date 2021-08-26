@@ -23,8 +23,10 @@ O objetivo do produto é fazer a medição de temperatura, luminosidade e veloci
 ## Diagrama do projeto
 
 Arquitetura do Arduino:
+![image](https://user-images.githubusercontent.com/69016130/131044558-5bec95d4-e6f0-44ca-9e0c-e97dbf40808c.png)
 
 Flow do Node-Red do projeto:
+![image](https://user-images.githubusercontent.com/69016130/131044571-5203ba5e-192d-4195-a33c-020959a64e27.png)
 
 ## Como usar 
 
