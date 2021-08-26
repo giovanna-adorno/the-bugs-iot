@@ -1,0 +1,328 @@
+[
+  {
+    "id": "4035b379.afceac",
+    "type": "tab",
+    "label": "Flow 1",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "68330726.0d4d08",
+    "type": "debug",
+    "z": "4035b379.afceac",
+    "name": "",
+    "active": false,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 990,
+    "y": 280,
+    "wires": []
+  },
+  {
+    "id": "383d152b.1915ca",
+    "type": "serial in",
+    "z": "4035b379.afceac",
+    "name": "",
+    "serial": "3a02d27d.ad735e",
+    "x": 200,
+    "y": 460,
+    "wires": [
+      [
+        "b8214140.4537f"
+      ]
+    ]
+  },
+  {
+    "id": "510563fa.f8ee44",
+    "type": "ui_gauge",
+    "z": "4035b379.afceac",
+    "name": "",
+    "group": "6a3c93d3.8a2f3c",
+    "order": 2,
+    "width": 0,
+    "height": 0,
+    "gtype": "gage",
+    "title": "Vento",
+    "label": "units",
+    "format": "{{payload.vento}}",
+    "min": 0,
+    "max": "500",
+    "colors": [
+      "#00b500",
+      "#e6e600",
+      "#ca3838"
+    ],
+    "seg1": "",
+    "seg2": "",
+    "x": 970,
+    "y": 340,
+    "wires": []
+  },
+  {
+    "id": "7da0641.2dcfd9c",
+    "type": "ui_gauge",
+    "z": "4035b379.afceac",
+    "name": "",
+    "group": "6a3c93d3.8a2f3c",
+    "order": 1,
+    "width": 0,
+    "height": 0,
+    "gtype": "gage",
+    "title": "Luminosidade",
+    "label": "units",
+    "format": "{{payload.luminosidade}}",
+    "min": 0,
+    "max": "1020",
+    "colors": [
+      "#00b500",
+      "#e6e600",
+      "#ca3838"
+    ],
+    "seg1": "",
+    "seg2": "",
+    "x": 1000,
+    "y": 380,
+    "wires": []
+  },
+  {
+    "id": "30b787b.36072f8",
+    "type": "ui_gauge",
+    "z": "4035b379.afceac",
+    "name": "",
+    "group": "6a3c93d3.8a2f3c",
+    "order": 0,
+    "width": 0,
+    "height": 0,
+    "gtype": "gage",
+    "title": "Temperatura",
+    "label": "units",
+    "format": "{{payload.temperatura}}",
+    "min": 0,
+    "max": "200",
+    "colors": [
+      "#00b500",
+      "#e6e600",
+      "#ca3838"
+    ],
+    "seg1": "",
+    "seg2": "",
+    "x": 990,
+    "y": 420,
+    "wires": []
+  },
+  {
+    "id": "2f067e5d.6372ca",
+    "type": "mqtt in",
+    "z": "4035b379.afceac",
+    "name": "",
+    "topic": "theBugs_medidor",
+    "qos": "2",
+    "datatype": "auto",
+    "broker": "c7cd0177.cd0f6",
+    "x": 480,
+    "y": 380,
+    "wires": [
+      [
+        "9c268699.23d598"
+      ]
+    ]
+  },
+  {
+    "id": "b8214140.4537f",
+    "type": "mqtt out",
+    "z": "4035b379.afceac",
+    "name": "",
+    "topic": "theBugs_medidor",
+    "qos": "",
+    "retain": "",
+    "broker": "c7cd0177.cd0f6",
+    "x": 490,
+    "y": 460,
+    "wires": []
+  },
+  {
+    "id": "4b5e2156.552e58",
+    "type": "inject",
+    "z": "4035b379.afceac",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "medidor",
+    "payload": "110,150,200",
+    "payloadType": "str",
+    "x": 180,
+    "y": 580,
+    "wires": [
+      [
+        "b8214140.4537f"
+      ]
+    ]
+  },
+  {
+    "id": "8dc0cbbf.bec93",
+    "type": "debug",
+    "z": "4035b379.afceac",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 1170,
+    "y": 600,
+    "wires": []
+  },
+  {
+    "id": "a408dd22.ae99e8",
+    "type": "switch",
+    "z": "4035b379.afceac",
+    "name": "",
+    "property": "payload.vento",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "gt",
+        "v": "179",
+        "vt": "num"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 1,
+    "x": 830,
+    "y": 520,
+    "wires": [
+      [
+        "28b05974.a69ac6"
+      ]
+    ]
+  },
+  {
+    "id": "9c268699.23d598",
+    "type": "function",
+    "z": "4035b379.afceac",
+    "name": "",
+    "func": "let payload = msg.payload\npayload = payload.split(\",\")\nmsg.payload = {\n    \"luminosidade\":parseInt(payload[0]),\n    \"temperatura\":parseInt(payload[1]),\n    \"vento\":parseInt(payload[2])\n}\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 660,
+    "y": 380,
+    "wires": [
+      [
+        "a408dd22.ae99e8",
+        "30b787b.36072f8",
+        "7da0641.2dcfd9c",
+        "510563fa.f8ee44",
+        "68330726.0d4d08"
+      ]
+    ]
+  },
+  {
+    "id": "25e7a798.dc63d8",
+    "type": "twitter out",
+    "z": "4035b379.afceac",
+    "twitter": "",
+    "name": "Tweet",
+    "x": 1150,
+    "y": 520,
+    "wires": []
+  },
+  {
+    "id": "28b05974.a69ac6",
+    "type": "function",
+    "z": "4035b379.afceac",
+    "name": "",
+    "func": "msg.payload = \"Vento rápido:\" + msg.payload.vento + \" Kilometros por Hora\"\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "x": 980,
+    "y": 520,
+    "wires": [
+      [
+        "25e7a798.dc63d8",
+        "8dc0cbbf.bec93"
+      ]
+    ]
+  },
+  {
+    "id": "3a02d27d.ad735e",
+    "type": "serial-port",
+    "serialport": "/dev/tnt1",
+    "serialbaud": "9600",
+    "databits": "8",
+    "parity": "none",
+    "stopbits": "1",
+    "waitfor": "",
+    "dtr": "none",
+    "rts": "none",
+    "cts": "none",
+    "dsr": "none",
+    "newline": "\\n",
+    "bin": "false",
+    "out": "char",
+    "addchar": "",
+    "responsetimeout": "10000"
+  },
+  {
+    "id": "6a3c93d3.8a2f3c",
+    "type": "ui_group",
+    "name": "Medidores",
+    "tab": "f6ae684f.3d9a48",
+    "order": 1,
+    "disp": true,
+    "width": "6",
+    "collapse": false
+  },
+  {
+    "id": "c7cd0177.cd0f6",
+    "type": "mqtt-broker",
+    "name": "",
+    "broker": "broker.hivemq.com",
+    "port": "1883",
+    "clientid": "",
+    "usetls": false,
+    "compatmode": true,
+    "keepalive": "60",
+    "cleansession": true,
+    "birthTopic": "",
+    "birthQos": "0",
+    "birthPayload": "",
+    "closeTopic": "",
+    "closeQos": "0",
+    "closePayload": "",
+    "willTopic": "",
+    "willQos": "0",
+    "willPayload": ""
+  },
+  {
+    "id": "f6ae684f.3d9a48",
+    "type": "ui_tab",
+    "name": "Home",
+    "icon": "dashboard",
+    "disabled": false,
+    "hidden": false
+  }
+]
