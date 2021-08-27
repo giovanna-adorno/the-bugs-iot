@@ -28,35 +28,21 @@ Arquitetura do Arduino:
 Flow do Node-Red do projeto:
 ![image](https://user-images.githubusercontent.com/69016130/131044571-5203ba5e-192d-4195-a33c-020959a64e27.png)
 
-## Como usar 
 
-Explique como rodar o seu projeto. Quais programas instalar, como configurar... 
-
-* Pode ser utilizado marcadores
-* Para ajudar na formatação
-
-Ou qualquer outra tabulação:
-
-- [x] Youtube
-- [ ] Facebook 
-- [x] Instagram
-
-Pode adicionar algum trecho de código, por exemplo para clonar esse repositório:
-
-    cd /home/iot
-    git clone https://github.com/arnaldojr/templatenac
-    cd templatenac
-    ls
-
-
+&nbsp;
 ## Link de vídeo demonstração
+[Clique aqui para assistir ao vídeo do projeto funcionando.](https://www.youtube.com/watch?v=DYvpSIIlV50)
 
-Adicione o link para assistir ao vídeo do projeto funcionando.
+&nbsp;
+## Como usar 
+Para rodar o projeto, basta seguir alguns passos:
+1. Faça o download do arquivo zip do projeto [aqui](https://github.com/giovanna-adorno/the-bugs-iot/archive/refs/heads/main.zip)
+2. Abra o arquivo Cp4.simu no software SimulIDE
+3. Importe o arquivo Cp4.ino dentro do SimulIDE e starte o projeto
+4. Acesse o [Twitter do TheBugs](https://twitter.com/TheBugs_Fiap) para ver os resultados
 
-[Link para o video youtube](https://www.youtube.com/watch?v=xva71wynxS0)
-
-
+&nbsp;
 ### Referências 
 
-* [mastering-markdown](https://guides.github.com/features/mastering-markdown/)
-* [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+- [Anemômetro](https://www.usinainfo.com.br/blog/anemometro-arduino-um-sensor-de-vento-para-estacao-meteorologica/)
+  O Sensor do anemômetro foi simulado usando o 'clock' e o frequenciometro.
